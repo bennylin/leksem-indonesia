@@ -1,0 +1,28 @@
+.form {
+    page-break-inside: avoid;
+}
+
+.form dd {
+    margin-inline-start: 0;
+}
+
+.section-spacer {
+    display: none;
+}
+
+@media screen and (min-width: 1000px) {
+    .two-column-sections .section {
+        column-count: 2;
+    }
+
+    /*
+     * When there is only a single form in a section (e. g. infinitive of a verb),
+     * Firefox puts a column break inside that form despite the break-inside: avoid above.
+     * An empty spacer avoids this (by taking up the second column),
+     * but we only want that to be visible in columns mode for single-form sections.
+     */
+    .two-column-sections .section .form:first-child + .section-spacer {
+        display: block;
+        height: 1em;
+    }
+}

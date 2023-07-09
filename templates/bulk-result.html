@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block main %}
+  <h1 {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
+  <ul>
+    {% for result in results %}
+    <li>
+      {% if result.duplicates %}
+      {{ result.duplicates | render_duplicates(in_bulk_mode=True, template_name=template['@template_name'], form_representations=result.form_representations) | safe }}
+      {% else %}
+      <a href="{{ result.lexeme_uri }}">
+        {% if result.lexeme_data.lemmas %}
+        {{ result.lexeme_data.lemmas | lemmas_spans }}
+        ({{ result.lexeme_id }})
+        {% else %}
+        {# when editing an existing lexeme, we currently don’t have the lemmas #}
+        {{ result.lexeme_id }}
+        {% endif %}
+      </a>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock main %}

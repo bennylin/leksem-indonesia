@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kkairri",
+			"Lucas Werkmeister",
+			"Nikki",
+			"RYU N",
+			"Sai10ukazuki",
+			"Tamaki Wakita",
+			"Tmv",
+			"春春眠眠"
+		]
+	},
+	"create": "作成",
+	"duplicates-create": "とにかく新しい語彙素を作成します。",
+	"advanced": "アドバンス",
+	"advanced-general": "現在「アドバンス」モードです。",
+	"lexeme-id": "語彙素ID",
+	"bulk-link": "バルクモード",
+	"bulk-format-help": "様式のヘルプ",
+	"bulk-not-allowed": "あなたのバルクモードの使用は許可されていません。 申し訳ございません。",
+	"edit-link": "編集",
+	"no-grammatical-features": "文法的特徴がない",
+	"title-create": "$1 (作成)",
+	"settings-save": "保存",
+	"source-code": "ソースコード",
+	"login": "ログイン",
+	"settings-link": "設定",
+	"settings-heading": "設定"
+}

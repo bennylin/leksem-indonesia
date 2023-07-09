@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% macro lexeme_form_link(wiki, lexeme_id, form, classes=[]) -%}
+  <a
+    href="https://{{ wiki }}.wikidata.org/wiki/Lexeme:{{ lexeme_id }}#{{ form.id | replace(lexeme_id + '-', '') }}"
+    {% if classes %} class="{{ classes | join(' ') }}" {% endif %}
+  >
+    {% for representation in form.representations.values() -%}
+    {{ representation | term_span }}
+    {%- if not loop.last %}/{% endif -%}
+    {%- endfor %}
+    ({{ form.id }})</a>
+{%- endmacro %}
+{% macro lexeme_form_list_item(wiki, lexeme_id, form, link_classes=[]) %}
+  <li>
+    {{ message_with_kwargs( 'edit-form-list-item',
+                            form_link=lexeme_form_link(wiki, lexeme_id, form, classes=link_classes),
+                            grammatical_feature_labels=form.grammaticalFeatures_labels | map('term_span') if form.grammaticalFeatures_labels else [message( 'no-grammatical-features' )],
+                            statements=form.get('claims', {}) | length ) | safe }}
+  </li>
+{% endmacro %}
+{% block title %}
+{{ lemmas | lemmas_spans | striptags }} ({{ template.lexeme_id }}) –
+{{ message_with_kwargs( 'title-edit', template_label=template.label ) | striptags }} –
+{{ super() }}
+{% endblock title %}
+{% block head %}
+{{ super() }}
+<script defer src="{{ url_for('static', filename='edit.js') }}"></script>
+<script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+{% endblock %}
+{% block main %}
+  <h1 {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
+  <h2>
+    <a href="https://{{ 'test' if template.test else 'www' }}.wikidata.org/wiki/Lexeme:{{ template.lexeme_id }}">
+      {{ lemmas | lemmas_spans }}
+      ({{ template.lexeme_id }})
+    </a>
+  </h2>
+  {% if readonly %}
+  <div class="alert alert-warning">
+    {{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) }}
+  </div>
+  {% endif %}
+  {% if not lexeme_matches_template %}
+  <div class="alert alert-danger">
+    {{ message( 'edit-mismatch-warning' ) }}
+  </div>
+  {% endif %}
+  <div class="alert alert-warning">
+    {{ message( 'edit-general' ) }}
+  </div>
+  {% if csrf_error %}
+  <div class="alert alert-warning">
+    {{ message( 'csrf-warning' ) }}
+  </div>
+  {% endif %}
+  {% if template.ambiguous_lexeme_forms %}
+  <div class="alert alert-warning">
+    {{ message_with_kwargs( 'edit-ambiguous-warning', forms=template.ambiguous_lexeme_forms | length ) }}
+    <ul>
+      {% for lexeme_form in template.ambiguous_lexeme_forms %}
+      {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form, link_classes=['grabbable']) }}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  {% if template.unmatched_lexeme_forms %}
+  <div class="alert alert-warning">
+    {{ message_with_kwargs( 'edit-unmatched-warning', forms=template.unmatched_lexeme_forms | length ) }}
+    <ul>
+      {% for lexeme_form in template.unmatched_lexeme_forms %}
+      {{ lexeme_form_list_item('test' if template.test else 'www', template.lexeme_id, lexeme_form, link_classes=['grabbable']) }}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <form method="post" autocapitalize="off">
+    <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+    <input name="_edit_mode" type="hidden" value="">
+    <input name="_lexeme_revision" type="hidden" value="{{ template.lexeme_revision }}">
+    <dl{% if template.two_column_sections %} class="two-column-sections"{% endif %} {{ push_html_lang( template.language_code | lang_lex2int ) }}>
+      <div class="section">
+        {% for form in template.forms %}
+        {% if form.section_break %}
+        <div class="section-spacer"></div>
+      </div>
+      <hr>
+      <div class="section">
+        {% endif %}
+        <div class="form">
+          <dt>{{ form | form2label }}</dt>
+          <dd>{{ form | form2input(loop.first, readonly, template_language_code, representation_language_code) }}</dd>
+        </div>
+        {% endfor %}
+        <div class="section-spacer"></div>
+      </div>
+    </dl{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
+    {% if template.target_hash %}
+    <input name="target_hash" type="hidden" value="{{ template.target_hash }}">
+    {% endif %}
+    <button class="btn btn-primary"{% if readonly %} disabled title="{{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'edit-button' ) }}</button>
+  </form>
+{% endblock main %}

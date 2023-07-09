@@ -1,0 +1,12 @@
+The files `translations.py` and `templates.py`,
+as well as all the files in the `i18n/` directory,
+are published under the CC BY-SA 3.0 license,
+as provided in the `LICENSE.CC_BY-SA_3.0` file in this repository.
+Parts of their full history are on Wikidata and not in this repository –
+see the links in the files for details.
+(Contributions to these files should only happen on Wikidata.)
+
+All the other files are published under the GNU AGPL3 license,
+as provided in the `LICENSE.AGPL3` file in this repository.
+By submitting a “pull request” or otherwise contributing to this repository,
+you agree to license your contribution under the license mentioned above.

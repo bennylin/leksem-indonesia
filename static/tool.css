@@ -1,0 +1,12 @@
+body {
+    text-align: start;
+}
+
+#collapsible-menu.nojs {
+    display: flex;
+    flex-grow: 1;
+}
+
+.template-li a:not(:hover) {
+    text-decoration-line: none;
+}

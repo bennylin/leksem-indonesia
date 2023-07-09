@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}{{ message_with_kwargs( 'title-bulk', template_label=template.label ) | striptags }} – {{ super() }}{% endblock title %}
+{% block head %}
+{{ super() }}
+<script defer src="{{ url_for('static', filename='preventDoubleSubmit.js') }}"></script>
+{% endblock %}
+{% block main %}
+  <h1 {{ push_html_lang( template.language_code | lang_lex2int ) }}>{{ template.label }}</h1{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
+  <h2>{{ message('bulk-heading') }}</h2>
+  {% if readonly %}
+  <div class="alert alert-warning">
+    {{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) }}
+  </div>
+  {% endif %}
+  <p>
+    <a href="https://www.wikidata.org/wiki/Wikidata:Wikidata_Lexeme_Forms#Bulk_mode">{{ message('bulk-format-help') }}</a>
+  </p>
+  {% if csrf_error %}
+  <div class="alert alert-warning">
+    {{ message( 'csrf-warning' ) }}
+  </div>
+  {% endif %}
+  {% if parse_error %}
+  <div class="alert alert-warning">
+    {{ parse_error }}
+  </div>
+  {% endif %}
+  {% if show_optional_forms_hint %}
+  <div class="alert alert-info">
+    {{ message( 'bulk-optional-forms-hint' ) }}
+  </div>
+  {% endif %}
+  <form method="post" autocapitalize="off">
+    <input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+    <input name="_bulk_mode" type="hidden" value="">
+    <div class="form-group">
+      <textarea
+        name="lexemes"
+        class="form-control"
+        rows="10"
+        placeholder="{{ placeholder }}"
+        required
+        autofocus
+        spellcheck="true"
+        {{ push_html_lang( template.language_code | lang_lex2int ) }}
+        >{% if value %}{{ value }}{% endif %}</textarea{{ pop_html_lang( template.language_code | lang_lex2int ) }}>
+    </div>
+    <!-- TODO generated_via should fit somewhere in here -->
+    <button class="btn btn-danger"{% if readonly %} disabled title="{{ message_with_kwargs( 'login-hint', url=url_for( 'login' ) ) | striptags }}" {% endif %}>{{ message( 'create' ) }}</button>
+  </form>
+{% endblock main %}

@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joquliina",
+			"MITO",
+			"Markus Mikkonen",
+			"Nike",
+			"Pyscowicz",
+			"Shinnin",
+			"Yupik"
+		]
+	},
+	"create": "Julkaise",
+	"csrf-warning": "Anteeksi, pyynnön käsittely ei onnistunut (<abbr title=\"Cross-site request forgery\">CSRF</abbr> suojaus epäonnistui). Yritä tallentaa kaavake uudestaan, kiitos.",
+	"duplicates-warning": "{{PLURAL:$1|Seuraavalla lekseemillä|Seuraavilla lekseemeillä}} on sama lemma ja kieli kuin sillä, jota yrität luoda:",
+	"duplicates-instructions": "Jos olet varma, että {{PLURAL:$1|se on eri lekseemi|ne ovat eri lekseemeitä}}, laita rasti kaavakkeen lopussa olevaan laatikkoon.",
+	"duplicates-create": "Luo uusi lekseemi joka tapauksessa.",
+	"no-duplicate": "Tämä ei ole kaksoiskappale olemassa olevasta lekseemistä.",
+	"form-optional": "&#32;(valinnainen)",
+	"advanced": "Laajenna",
+	"advanced-general": "Olet laajennetussa muokkaustilassa.",
+	"advanced-lexeme-id": "Uuden lekseemin luomisen lisäksi voit muokata jo olemassa olevaa lekseemiä syöttämällä sen tunnisteen. Jätä lekseemissä jo olevat taivutusmuodot tyhjiksi, muuten ne tuplaantuvat.",
+	"advanced-partial-forms": "Voit jättää jotkin taivutusmuodoista tyhjiksi. Varmista kuitenkin, että ne ovat tyhjiä tarkoituksella eivätkä vahingossa.",
+	"lexeme-id": "Lekseemi-tunniste",
+	"advanced-partial-forms-hint": "Luodaksesi lekseemin ilman joitakin taivutusmuotoja, siirry laajennettuun muokkaustilaan.",
+	"edit-link": "muokkaa",
+	"no-grammatical-features": "ei kieliopillisia ominaisuuksia",
+	"title-create": "$1 (luo)",
+	"title-advanced": "$1 (kehittynyt)",
+	"title-edit": "$1 (muokkaa)",
+	"login-hint": "Sinun on [$1 kirjauduttava sisään] ennen kuin voit tehdä muutoksia käyttämällä tätä työkalua.",
+	"settings-save": "Tallenna",
+	"skip-to-main-content": "Siirry pääsisältöön",
+	"documentation": "Dokumentaatio",
+	"source-code": "Lähdekoodi",
+	"login": "Kirjaudu sisään",
+	"settings-link": "Asetukset",
+	"settings-heading": "Asetukset"
+}

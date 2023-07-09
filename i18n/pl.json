@@ -1,0 +1,41 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps",
+			"KaMan",
+			"Lucas Werkmeister",
+			"Luku123"
+		]
+	},
+	"create": "Utwórz",
+	"csrf-warning": "Niestety przetworzenie tego żądania było niemożliwe (ochrona <abbr title=\"Cross-site request forgery\">CSRF</abbr>). Proszę spróbować przesłać formularz ponownie.",
+	"duplicates-warning": "Następujące istniejące leksemy mają tę samą formę kanoniczną i kod języka jak ten, który próbujesz utworzyć:",
+	"duplicates-instructions": "Jeśli masz pewność, że one są różne, zaznacz kratkę u dołu formularza.",
+	"duplicates-create": "Mimo to utwórz nowy leksem.",
+	"no-duplicate": "To nie jest duplikat istniejącego leksemu.",
+	"form-optional": "&#32;(opcjonalnie)",
+	"advanced": "Zaawansowane",
+	"advanced-general": "Jesteś w trybie “zaawansowanym”.",
+	"advanced-lexeme-id": "Możesz podać ID leksemu by dodać formy do istniejącego leksemu, zamiast tworzyć nowy leksem. Formy, które już istnieją, pozostaw puste, w przeciwnym wypadku zostaną one powielone!",
+	"advanced-partial-forms": "Możesz zostawić niektóre formy puste, dzięki czemu nie zostaną one dodane. Upewnij się, że przypadkowo nie pominąłeś żadnej formy!",
+	"lexeme-id": "ID leksemu",
+	"advanced-partial-forms-hint": "Aby utworzyć leksemy z pominięciem niektórych form, przełącz się na tryb zaawansowany.",
+	"generated-via": "wygenerowane przez",
+	"bulk-link": "tryb zbiorczy",
+	"bulk-not-allowed": "Nie {{GENDER:$1|możesz}} używać trybu zbiorczego.",
+	"edit-link": "edytuj",
+	"edit-general": "Jesteś w trybie „edycji”. Zmiana poniższych wartości spowoduje edycję, dodanie lub usunięcie form leksemu docelowego.",
+	"edit-form-list-item": "$1 , $2 , {{PLURAL:$3|0=brak deklaracji|jedna deklaracja|$3 deklaracje|$3 deklaracji}}",
+	"no-grammatical-features": "brak cech gramatycznych",
+	"title-create": "$1 (stwórz)",
+	"title-advanced": "$1 (zaawansowane)",
+	"title-edit": "$1 (edytuj)",
+	"login-hint": "Aby wprowadzić zmiany za pomocą tego narzędzia, musisz się [$1 zalogować].",
+	"ambiguous-template": "Szablon $1 już nie istnieje; został on zastąpiony przez następujące szablony",
+	"settings-label-interface-language-code": "Język interfejsu użytkownika",
+	"settings-save": "Zapisz",
+	"documentation": "Dokumentacja",
+	"login": "Zaloguj się",
+	"settings-link": "Ustawienia",
+	"settings-heading": "Ustawienia"
+}

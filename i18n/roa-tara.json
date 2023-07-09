@@ -1,0 +1,41 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"create": "Ccreje",
+	"csrf-warning": "Ne despiace, non g'è possibbele processà sta richieste (errore: protezione <abbr title=\"Cross-site request forgery\">CSRF</abbr> fallite). Pruève arrete.",
+	"duplicates-warning": "Attenziò, {{PLURAL:$1|stu lesseme ave|le lesseme onne}} 'u stesse lemme e codece d'a lènghe de quidde ca ave appene pruvate de ccrejà:",
+	"duplicates-instructions": "Ce sì secure ca {{PLURAL:$1|jè|sò}} diverse, spunde 'a caselle ca ste 'a fine de stu module.",
+	"duplicates-create": "Ccrèje 'u stesse 'nu lesseme nuève.",
+	"no-duplicate": "Quiste non g'è 'nu duplicate de 'nu lesseme esistende.",
+	"form-optional": "&#32;(facoltative)",
+	"advanced": "Avanzate",
+	"advanced-general": "Te iacchie jndr'à modalità \"avanzate\".",
+	"advanced-lexeme-id": "Puè 'nzerì 'nu ID de 'nu lesseme ca esiste pe aggiungere le forme ca mangane, invece de farne une nuève. NO sce 'nzerenne le forme ca ggià esistone, ce nò le face a doppie!",
+	"advanced-partial-forms": "Ce lasse 'nu cambe vacande, non g'avène ccrejate nisciuna forme. Assecurate de ccrejà le forme ca servone!",
+	"lexeme-id": "ID d'u lesseme",
+	"advanced-partial-forms-hint": "Pe ccrejà lesseme cu de le forme mangande, cange jndr'à modalità avanzate.",
+	"generated-via": "generate cu",
+	"description-with-forms-and-senses": "$1, {{PLURAL:$2|0=nisciuna|'na|$2}} forme e {{PLURAL:$3|0=nisciune|'nu|$3}} sienze",
+	"bulk-link": "carecamedne de masse",
+	"bulk-format-help": "aijute formattazione",
+	"bulk-not-allowed": "Non ge {{GENDER:$1|sì}} autorizzate a ausà 'u carecamende de masse. Ne despiace.",
+	"bulk-first-field-not-lexeme-id": "Da quanne 'u template tène {{PLURAL:$1|'nu module|$1 module}} e linèe $4 de ingresse ave {{PLURAL:$2|'nu cambe|$2 cambe}}, 'u prime cambe avessà essere 'ndrucate cumme a 'nu ID d'u lesseme, ma <q>$3</q> non g'ù 'ndruche accussì. (E' Specificate 'nu module cu troppe date de 'ngresse?)",
+	"bulk-first-field-lexeme-id": "Da quanne 'u template tène {{PLURAL:$1|'nu module|$1 module}} e linèe $4 de ingresse ave {{PLURAL:$2|'nu cambe|$2 cambe}}, 'u prime cambe non g'ava essere 'nu ID d'u lesseme, ma <q>$3</q> accussì 'u 'ndruche. (Tè scurdate 'nu module jndr'à 'le date de 'ngresse?)",
+	"bulk-wrong-number-of-fields": "Da quanne 'u template tène {{PLURAL:$1|'nu module|$1 module}} ogne linèe de ingresse avessa avè 'u stesse numere de cambe (quanne se ccreje 'nu lesseme nuève) o une de cchiù (quanne se specifeche l'ID de 'nu lesseme ca esiste ggià, da cangià), ma 'a linèe $3 de le date de 'ngresse invece ave {{PLURAL:$2|'nu cambe|$2 cambe}}.",
+	"bulk-optional-forms-hint": "Ce vuè ccu zumbe quacche module, specifecale cumme vacande (p.e. <kbd>...|||</kbd> pe ttre module vacande a fine).",
+	"edit-link": "cange",
+	"edit-general": "Ste jndr'à modalità \"cangiamende\". Cangianne le valore aqquà sotte avènene cangiate, aggiunde o luate le module d'u lesseme de destinazione.",
+	"edit-mismatch-warning": "Stu lesseme non ge pare ca s'accocchie a stu template! Pe piacere condrolle doje vote ca jè 'u template giuste pe stu lesseme apprime de condinuà.",
+	"edit-ambiguous-warning": "{{PLURAL:$1|'A|Le}} forme d'u lesseme s'accocchiane cu cchiù de 'na forme jndr'à 'u template:",
+	"edit-unmatched-warning": "{{PLURAL:$1|'A|Le}} forme d'u lesseme non ge s'accocchiane cu nisciuna forme jndr'à 'u template:",
+	"edit-form-list-item": "$1, $2, {{PLURAL:$3|0=nisciuna dichiarazione|'na dichiarazione|$3 dichiaraziune}}",
+	"no-grammatical-features": "nisciuna caratteristeche grammatecale",
+	"title-create": "$1 (ccreje)",
+	"title-advanced": "$1 (avanzate)",
+	"title-bulk": "$1 (massive)",
+	"title-edit": "$1 (cange)",
+	"login-hint": "E' abbesògne de [$1 trasè] apprime ca puè ffà cangiaminde ausanne stu strumende."
+}
